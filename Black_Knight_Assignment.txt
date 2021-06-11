@@ -1,0 +1,52 @@
+1: 
+#include "stdafx.h"
+#include<iostream>
+#include<string>
+using namespace std;
+
+bool IsPalynDrom(char *ptr)
+{
+	bool bPalyndrom = true;
+	int iLength = strlen(ptr);
+	for(int i = 0, j = iLength -1; i<iLength/2; i++,j--)
+	{
+		if(toupper(ptr[i])!= toupper(ptr[j]))
+		{
+			bPalyndrom = false;
+			break;
+		}
+		
+	}
+	return bPalyndrom;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	string str;
+	cout<<"enter a text check for palyndrom \n";
+	getline(cin,str);
+	char *ptr = const_cast<char*>(str.c_str());
+
+	if(IsPalynDrom(ptr))
+		cout<<"\n palyndrom \n";
+	else
+		cout<<"\n not palyndrom \n";
+	return 0;
+}
+
+
+
+2: SELECT ID,NAME FROM CUSTOMER
+   ORDER BY NAME DESC,
+	    ID ASC;
+
+
+3: SELECT id,name,marks,
+	CASE
+	    WHEN marks > 90 THEN 'A+'
+	    WHEN marks > 70 THEN 'A'
+	    WHEN marks > 50 THEN 'B'
+	    WHEN marks >= 40 THEN 'C'
+	    ELSE 'Fail'
+	END AS grade
+    FROM Students;	
