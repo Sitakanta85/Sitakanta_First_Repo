@@ -1,10 +1,12 @@
-1: 
-#include "stdafx.h"
-#include<iostream>
-#include<string>
+/******************************************************************************
+1. check for Palindrome
+*******************************************************************************/
+#include <iostream>
+#include <string.h>
+
 using namespace std;
 
-bool IsPalynDrom(char *ptr)
+bool IsPalynDrom(const char *ptr)
 {
 	bool bPalyndrom = true;
 	int iLength = strlen(ptr);
@@ -19,21 +21,22 @@ bool IsPalynDrom(char *ptr)
 	}
 	return bPalyndrom;
 }
-
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
-	string str;
-	cout<<"enter a text check for palyndrom \n";
-	getline(cin,str);
-	char *ptr = const_cast<char*>(str.c_str());
-
-	if(IsPalynDrom(ptr))
-		cout<<"\n palyndrom \n";
+    std::string str;
+    std::cout<<"enter a text check for palyndrom \n";
+    
+    getline(std::cin,str);
+    
+    const char *ptr = str.c_str();
+    
+    if(IsPalynDrom(ptr))
+		std::cout<<"\n palyndrom \n";
 	else
-		cout<<"\n not palyndrom \n";
-	return 0;
+		std::cout<<"\n not palyndrom \n";
+    
+    return 0;
 }
-
 
 
 2: SELECT ID,NAME FROM CUSTOMER
