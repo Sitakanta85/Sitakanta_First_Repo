@@ -1,0 +1,77 @@
+/*
+ *
+ * Using C++ create a linked list with a structure having two attributes:
+ *
+ * The value as an integer
+ * The node that follows in the list
+ *
+ * Once the structure has been defined create a function to add entries to the list. Then create a function to print the results.
+ */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Node {
+    int value;
+    Node* next;
+};
+
+class LinkList
+{
+    private:
+    Node *head;
+    public:
+    LinkList()
+    {
+        head = NULL;
+    }
+
+   bool addEntry(int value);
+   void display();
+    
+};
+    bool LinkList::addEntry(int value) 
+    {
+        Node *ptr = new Node();
+        ptr->value = value;
+        ptr->next = NULL;
+             
+        if(head == NULL)
+        {     
+            head = ptr;       
+        }
+        else 
+        { 
+            Node *temp = head;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }  
+            temp->next = ptr;
+        }   
+             
+     return true;
+    }
+ void LinkList::display()
+    {
+        Node *temp = head;
+        while(temp->next != NULL)
+        {
+            cout<<temp->value<<endl;
+            temp = temp->next;
+        }
+        cout<<temp->value;
+    }  
+
+int main()
+{
+    LinkList list;
+    list.addEntry(1);
+    list.addEntry(2);
+    list.addEntry(3);
+    
+    list.display();
+        
+    return 0;
+}
