@@ -1,3 +1,4 @@
+
 /*
  *
  * Using C++ create a linked list with a structure having two attributes:
@@ -49,19 +50,17 @@ class LinkList
                 temp = temp->next;
             }  
             temp->next = ptr;
-        }   
-             
+        }               
      return true;
     }
  void LinkList::display()
     {
         Node *temp = head;
-        while(temp->next != NULL)
+        while(temp != NULL)
         {
             cout<<temp->value<<endl;
             temp = temp->next;
         }
-        cout<<temp->value;
     }  
 
 int main()
@@ -71,7 +70,6 @@ int main()
     list.addEntry(2);
     list.addEntry(3);
     
-    list.display();
-        
+    list.display();     
     return 0;
 }
